@@ -32,17 +32,66 @@ const shuffle = () => {
 </script>
 
 <template>
-  <div>
-    <div>
+  <section class="letter-section">
+    <div class="letters">
       <button
         v-for="(letter, index) in letters"
         :key="letter + index"
         @click="() => enterLetter(letter)"
+        class="letter-button"
       >
         {{ letter }}
       </button>
-      <button @click="shuffle">shuffle</button>
     </div>
-    <input type="text" v-model="inputValue" @keydown.enter="onEnter" />
-  </div>
+    <button @click="shuffle" class="shuffle-button"><img src="../assets/refresh.svg" /></button>
+  </section>
+  <section class="input-section">
+    <input
+      type="text"
+      v-model="inputValue"
+      @keydown.enter="onEnter"
+      @keydown.space="shuffle"
+    />
+    <button @click="onEnter">ok</button>
+  </section>
 </template>
+
+<style scoped lang="scss">
+.letter-section {
+  display: flex;
+  margin-bottom: 1rem;
+
+  .letters {
+    display: flex;
+    .letter-button {
+      border-radius: 0;
+      width: 3rem;
+      height: 3rem;
+      font-size: 2rem;
+      margin: 0 0.5rem;
+    }
+  }
+
+  .shuffle-button {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input-section {
+  height: 3rem;
+
+  display: flex;
+  input {
+    border-radius: 5px 0 0 5px;
+    font-size: 2rem;
+    border: none;
+    color: black
+  }
+
+  button {
+    border-radius: 0 5px 5px 0;
+  }
+}
+</style>

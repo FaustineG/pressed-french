@@ -1,0 +1,19 @@
+@import './base.scss';
+
+#app {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
+
+button {
+  border-radius: 5px;
+  min-height: 2rem;
+  color: black;
+  border: none;
+  background-color: var(--secondary-color);
+}
+button:hover {
+  box-shadow: 0 0 2rem 1rem white;
+  cursor: pointer;
+}

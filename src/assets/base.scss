@@ -1,0 +1,14 @@
+:root {
+  --background-color: darkblue;
+  --secondary-color: lightblue;
+  --font-color: white;
+  --font-family: 'Calibri';
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+* {
+  margin: 0;
+  color: var(--font-color);
+  font-size: 2rem;
+}
