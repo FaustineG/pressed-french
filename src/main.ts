@@ -12,3 +12,8 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+const localScore = localStorage.getItem('high-score')
+if (!localScore) {
+  localStorage.setItem('high-score', '0')
+}

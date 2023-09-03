@@ -34,6 +34,10 @@ const giveUp = () => {
     localStorage.setItem('high-score', score.value.toString())
   }
 }
+
+const newGame = () => {
+  window.location.reload()
+}
 </script>
 
 <template>
@@ -43,13 +47,13 @@ const giveUp = () => {
       {{ score }}
     </p>
     <button @click="giveUp">finir</button>
-    <button @click="giveUp">nouvelle partie</button>
+    <button @click="newGame">nouvelle partie</button>
     <p class="high-score">
       High score:
       {{ highScore }}
     </p>
   </header>
-  <main >
+  <main>
     <div class="words">
       <template v-for="{ value, visible, found } in wordGuesses" :key="value">
         <Word :word="value" :visible="visible" :found="found" />
@@ -62,34 +66,33 @@ const giveUp = () => {
 </template>
 
 <style lang="scss">
-main{
-  padding:0 2rem;
+main {
+  padding: 0 2rem;
 
   .words {
     display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 1rem;
-  max-height: 70vh;
-  padding: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
+    max-height: 70vh;
+    padding: 1rem;
+  }
 }
-} 
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-around;
 
-  .score{
+  .score {
     font-size: 3rem;
   }
 
-  .high-score{
+  .high-score {
     font-size: 2rem;
   }
 }
-
 
 footer {
   display: flex;
