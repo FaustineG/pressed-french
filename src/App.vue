@@ -18,23 +18,23 @@ onMounted(() => {
     <RouterView />
   </main>
   <section class="version">
-    <span> Copryight FofoCorp© 2023 </span>
-    {{ version }}
+    <span class="copyright"> Copryight FofoCorp© 2023 </span>
+    v.{{ version }}
   </section>
 </template>
 
 <style lang="scss">
-#app {
+.version {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  .version {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    background-color: var(--secondary-color);
+  justify-content: flex-end;
+  gap: 1rem;
+  .copyright {
+    font-size: 15px;
   }
+  font-size: 15px;
+  background-color: var(--secondary-color);
 }
 </style>

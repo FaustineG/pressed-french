@@ -11,6 +11,16 @@
     font-size: 7.5px;
   }
 }
+@media (max-width: 1300px) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media (min-width: 1300px) {
+  :root {
+    font-size: 15px;
+  }
+}
 * {
   margin: 0;
   color: var(--font-color);
