@@ -164,7 +164,6 @@ const onDelete = () => {
     border-radius: 5px 0 0 5px;
     font-size: var(--font-size);
     border: none;
-    color: black;
   }
 
   button {

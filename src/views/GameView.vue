@@ -3,7 +3,7 @@ import GuessInput from '@/components/GuessInput.vue'
 import Word from '@/components/Word.vue'
 import useWords from '@/services/useWords'
 import useScore from '@/services/useScore'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 const { allWords, availableLetters } = useWords()
 const { score, findWord } = useScore()
@@ -82,12 +82,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-
+  
   .score {
+    color: white;
     font-size: 3rem;
   }
-
+  
   .high-score {
+    color: white;
     font-size: 2rem;
   }
 }

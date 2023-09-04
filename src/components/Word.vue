@@ -23,7 +23,6 @@ defineProps<{ word: string; visible: boolean; found: boolean }>()
     font-size: 2rem;
     justify-content: center;
     align-items: center;
-    color: black
   }
 
   .not-found{
