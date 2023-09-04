@@ -117,7 +117,7 @@ const onDelete = () => {
 <style scoped lang="scss">
 .letter-section {
   --letter-size: 3rem;
-  --font-size: 2rem;
+  --letter-font-size: 2rem;
   display: flex;
   margin-bottom: 1rem;
   gap: 2rem;
@@ -128,7 +128,7 @@ const onDelete = () => {
       border-radius: 0;
       width: var(--letter-size);
       height: var(--letter-size);
-      font-size: var(--font-size);
+      font-size: var(--letter-font-size);
       margin: 0 0.5rem;
       font-variant: small-caps;
     }
@@ -142,7 +142,7 @@ const onDelete = () => {
   .delete-button {
     width: var(--letter-size);
     height: var(--letter-size);
-    font-size: var(--font-size);
+    font-size: var(--letter-font-size);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,8 +151,8 @@ const onDelete = () => {
 
 @media (max-width: 600px) {
   * {
-    --letter-size: 5rem;
-    --font-size: 4rem;
+    --letter-size: 4rem;
+    --font-size: 3rem;
   }
 }
 
@@ -162,7 +162,7 @@ const onDelete = () => {
   display: flex;
   input {
     border-radius: 5px 0 0 5px;
-    font-size: var(--font-size);
+    font-size: var(--letter-font-size);
     border: none;
   }
 
