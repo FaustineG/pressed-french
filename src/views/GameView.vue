@@ -11,7 +11,6 @@ const currentGuess = ref('')
 const wordGuesses = ref(allWords.map((word) => ({ value: word, visible: false, found: false })))
 
 const makeGuess = () => {
-  console.log(currentGuess.value)
   const word = wordGuesses.value.find((g) => g.value === currentGuess.value)
   if (word) {
     word.found = true
@@ -19,19 +18,17 @@ const makeGuess = () => {
     findWord(word.value.length)
   }
   currentGuess.value = ''
-  console.log(score.value)
 }
 
-const highScore = computed(() => {
-  return localStorage.getItem('high-score')
-})
+let highScore = parseInt(localStorage.getItem('high-score') ?? '')
 
 const giveUp = () => {
   wordGuesses.value.forEach((g) => {
     g.visible = true
   })
-  if (score.value > parseInt(highScore.value ?? '')) {
+  if (score.value > highScore) {
     localStorage.setItem('high-score', score.value.toString())
+    highScore = score.value
   }
 }
 
@@ -77,6 +74,7 @@ main {
     gap: 1rem;
     max-height: 70vh;
     padding: 1rem;
+    font-variant: small-caps;
   }
 }
 

@@ -1,8 +1,9 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import words from 'an-array-of-french-words'
+// import words from 'an-array-of-french-words'
+import relevantWords from '@/assets/words.json'
 
-const allSixLetterWords = (words as string[]).filter((w) => w.length === 6)
+const allSixLetterWords = (relevantWords as string[]).filter((w) => w.length === 6)
 const findAllOtherWords = (relevantWords: string[], mainWord: string) => {
   const allWords = relevantWords.filter((word) => {
     const tempWord = ref(mainWord)
@@ -27,14 +28,14 @@ export const useWordsStore = defineStore('words', () => {
   const allWords = computed(() => allOtherWords.value.concat(mainWord.value))
   const availableLetters = computed(() => mainWord.value.split('').sort(() => 0.5 - Math.random()))
 
-  const relevantWords = computed(() =>
-    (words as string[]).filter((w) => w.length > 2 && w.length < 6 && !w.includes('-'))
-  )
+  // const relevantWords = computed(() =>
+  //   (words as string[]).filter((w) => w.length > 2 && w.length < 6 && !w.includes('-'))
+  // )
 
   const chooseWord = () => {
     const i = Math.floor(Math.random() * allSixLetterWords.length)
     mainWord.value = allSixLetterWords[i]
-    allOtherWords.value = findAllOtherWords(relevantWords.value, mainWord.value)
+    allOtherWords.value = findAllOtherWords(relevantWords, mainWord.value)
   }
 
   return { allWords, chooseWord, availableLetters }
