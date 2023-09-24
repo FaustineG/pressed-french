@@ -25,12 +25,7 @@ export const useWordsStore = defineStore('words', () => {
   const mainWord = ref('')
   const allOtherWords = ref<string[]>([])
 
-  const allWords = computed(() => allOtherWords.value.concat(mainWord.value))
   const availableLetters = computed(() => mainWord.value.split('').sort(() => 0.5 - Math.random()))
-
-  // const relevantWords = computed(() =>
-  //   (words as string[]).filter((w) => w.length > 2 && w.length < 6 && !w.includes('-'))
-  // )
 
   const chooseWord = () => {
     const i = Math.floor(Math.random() * allSixLetterWords.length)
@@ -38,5 +33,5 @@ export const useWordsStore = defineStore('words', () => {
     allOtherWords.value = findAllOtherWords(relevantWords, mainWord.value)
   }
 
-  return { allWords, chooseWord, availableLetters }
+  return { allWords: allOtherWords, chooseWord, availableLetters }
 })

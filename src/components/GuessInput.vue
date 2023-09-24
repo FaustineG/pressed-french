@@ -14,20 +14,6 @@ const lettersClicked = computed(() =>
   allClicked.value.map((clicked, index) => ({ letter: letters.value[index], clicked, index }))
 )
 
-// const isCorrectGuess = (guess: string) => {
-//   let tempLetters = letters.value.toString()
-//   return guess
-//     .split('')
-//     .map((letter) => {
-//       const includesLetter = tempLetters.includes(letter)
-//       if (includesLetter) {
-//         tempLetters = tempLetters.replace(letter, '')
-//       }
-//       return includesLetter
-//     })
-//     .reduce((acc, val) => acc && val, true)
-// }
-
 const inputValue = computed({
   get: () => {
     return props.modelValue
@@ -105,11 +91,13 @@ const onDelete = () => {
         {{ letter }}
       </button>
     </div>
+  </section>
+  <section class="buttons-section">
     <button @click="onDelete" class="delete-button">&lt;</button>
     <button @click="shuffle" class="shuffle-button"><img src="../assets/refresh.svg" /></button>
   </section>
   <section class="input-section">
-    <input type="text" v-model="inputValue" @keydown.prevent="onKeydown" />
+    <input type="text" v-model="inputValue" @keydown.prevent="onKeydown" @input.prevent />
     <button @click="onEnter">ok</button>
   </section>
 </template>
@@ -137,6 +125,11 @@ const onDelete = () => {
       background-color: grey;
     }
   }
+}
+
+.buttons-section {
+  display: flex;
+  gap: 1rem;
 
   .shuffle-button,
   .delete-button {
@@ -149,15 +142,22 @@ const onDelete = () => {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   * {
     --letter-size: 4rem;
     --font-size: 3rem;
+  }
+
+  .input-section {
+    input {
+      pointer-events: none;
+    }
   }
 }
 
 .input-section {
   min-height: 3rem;
+  margin-top: 1rem;
 
   display: flex;
   input {

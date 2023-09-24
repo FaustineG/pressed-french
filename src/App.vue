@@ -24,6 +24,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+main {
+  display: grid;
+  grid-template-rows: 3rem calc(70% - 3rem) calc(30% + 2rem);
+  height: 100%;
+}
 .version {
   position: fixed;
   bottom: 0;
@@ -31,6 +36,7 @@ onMounted(() => {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  height: 2rem;
   .copyright {
     font-size: 15px;
   }
