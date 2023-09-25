@@ -6,7 +6,7 @@ import useScore from '@/services/useScore'
 import { ref } from 'vue'
 
 const { allWords, availableLetters } = useWords()
-const { score, findWord } = useScore()
+const { score, findWord, highScore } = useScore()
 const currentGuess = ref('')
 const wordGuesses = ref(allWords.map((word) => ({ value: word, visible: false, found: false })))
 
@@ -20,16 +20,10 @@ const makeGuess = () => {
   currentGuess.value = ''
 }
 
-let highScore = parseInt(localStorage.getItem('high-score') ?? '')
-
 const giveUp = () => {
   wordGuesses.value.forEach((g) => {
     g.visible = true
   })
-  if (score.value > highScore) {
-    localStorage.setItem('high-score', score.value.toString())
-    highScore = score.value
-  }
 }
 
 const newGame = () => {
