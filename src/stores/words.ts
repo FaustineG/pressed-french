@@ -3,8 +3,8 @@ import { defineStore } from 'pinia'
 // import words from 'an-array-of-french-words'
 import relevantWords from '@/assets/words.json'
 
-const allSixLetterWords = (relevantWords as string[]).filter((w) => w.length === 6)
-const findAllOtherWords = (relevantWords: string[], mainWord: string) => {
+export const allSixLetterWords = (relevantWords as string[]).filter((w) => w.length === 6)
+export const findAllOtherWords = (relevantWords: string[], mainWord: string) => {
   const allWords = relevantWords.filter((word) => {
     const tempWord = ref(mainWord)
     return word

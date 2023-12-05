@@ -6,8 +6,11 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      coverage: {
+        provider: 'istanbul' // or 'v8',
+      },
       environment: 'jsdom',
-      exclude: [...configDefaults.exclude, 'e2e/*'],
+      exclude: [...configDefaults.exclude, 'e2e/*', '**/assets/**'],
       root: fileURLToPath(new URL('./', import.meta.url))
     }
   })

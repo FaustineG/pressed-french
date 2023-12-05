@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameView > should mount 1`] = `
+"<header>
+  <p class="score"> Score : 0</p><button>end</button><button>new</button>
+  <p class="high-score"> High score: 0</p>
+</header>
+<section class="words"></section>
+<footer>
+  <guess-input-stub modelvalue="" availableletters=""></guess-input-stub>
+</footer>"
+`;

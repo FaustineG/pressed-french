@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Word > should mount 1`] = `
+"<div data-v-88bbdb11="" class="word">
+  <div data-v-88bbdb11="" class="letter not-found">t</div>
+  <div data-v-88bbdb11="" class="letter not-found">o</div>
+  <div data-v-88bbdb11="" class="letter not-found">t</div>
+  <div data-v-88bbdb11="" class="letter not-found">o</div>
+</div>"
+`;

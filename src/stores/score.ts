@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 const useScoreStore = defineStore('score', () => {
   const score = ref(0)
-  const highScore = ref(parseInt(localStorage.getItem('high-score') ?? ''))
+  const highScore = ref(parseInt(localStorage.getItem('high-score') ?? '0'))
 
   const findWord = (wordLength: number) => {
     score.value += wordLength
