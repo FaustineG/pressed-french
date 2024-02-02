@@ -28,6 +28,7 @@ describe('words store', () => {
 
     it('should init correctly', () => {
       const wordsStore = useWordsStore()
+      expect(wordsStore.$id).toBe('words')
       expect(wordsStore.allWords).toStrictEqual([])
     })
 

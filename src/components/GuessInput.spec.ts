@@ -5,16 +5,21 @@ import { mount } from '@vue/test-utils'
 const initComponent = (propsData = {}) => {
   return mount(GuessInput, {
     props: {
-      ...propsData,
-      modelValue: 'toto',
-      availableLetters: []
+      modelValue: '',
+      availableLetters: [],
+      ...propsData
     }
   })
 }
 
 describe('GuessInput', () => {
-  it('should mount', () => {
+  it('should match snapshot', () => {
     const wrapper = initComponent()
     expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('should be able to click on letter', () => {
+    const wrapper = initComponent()
+    const allLetterButtonElements = wrapper.findAll('.letter-button')
   })
 })

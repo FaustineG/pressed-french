@@ -1,6 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GuessInput > should mount 1`] = `
+exports[`GuessInput > should display all 1`] = `
+"<section data-v-550e92e3="" class="letter-section">
+  <div data-v-550e92e3="" class="letters"><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button></div>
+</section>
+<section data-v-550e92e3="" class="buttons-section"><button data-v-550e92e3="" class="delete-button">&lt;</button><button data-v-550e92e3="" class="shuffle-button"><img data-v-550e92e3="" src="/src/assets/refresh.svg"></button></section>
+<section data-v-550e92e3="" class="input-section"><input data-v-550e92e3="" type="text"><button data-v-550e92e3="">ok</button></section>"
+`;
+
+exports[`GuessInput > should match snapshot 1`] = `
 "<section data-v-550e92e3="" class="letter-section">
   <div data-v-550e92e3="" class="letters"><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button><button data-v-550e92e3="" class="letter-button"></button></div>
 </section>
